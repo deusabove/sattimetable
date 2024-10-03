@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'YeezyTstar';
+    src: url('yeezy_tstar-bold-webfont.ttf') format('truetype');
+}
+
+body {
+    font-family: 'YeezyTstar', Arial, sans-serif; /* Use Yeezy font */
+    background-color: #1C1C1C; /* Dark, muted background */
+    color: #EAEAEA; /* Light gray text for contrast */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #FFD700; /* Gold color for a luxurious feel */
+    font-size: 3em; /* Bold header size */
+    margin-bottom: 40px; /* Add space below header */
+    letter-spacing: 2px; /* Increased letter spacing for style */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow for depth */
+}
+
+th, td {
+    border: 1px solid #444; /* Darker border for a sleek look */
+    padding: 15px; /* Ample padding for readability */
+    text-align: left;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+th {
+    background-color: #3D3D3D; /* Dark gray for header */
+    color: #FFD700; /* Gold color for header text */
+    font-size: 1.5em; /* Larger font for headers */
+}
+
+tbody tr {
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 215, 0, 0.2); /* Soft gold hover effect */
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    transform: scale(1.2); /* Make checkboxes slightly larger */
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Style for custom checkbox */
+.custom-checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #0529c8; /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #1C1C1C; /* Dark background */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-left: 5px; /* Space between checkbox and text */
+}
+
+/* Change background color when checked */
+input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #0529c8; /* Change background to blue when checked */
+    border-color: #FFD700; /* Gold border when checked */
+}
+
+/* No checkmark styling */
+.custom-checkbox::after {
+    content: none; /* Remove checkmark */
+}

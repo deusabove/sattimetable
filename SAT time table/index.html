@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAT Study Timetable</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Hide the default checkbox */
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        /* Style for custom checkbox */
+        .custom-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #0529c8; /* Blue border */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #1C1C1C; /* Dark background */
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            margin-left: 5px; /* Space between checkbox and text */
+        }
+
+        /* Change background color when checked */
+        input[type="checkbox"]:checked + .custom-checkbox {
+            background-color: #0529c8; /* Change background to blue when checked */
+            border-color: #FFD700; /* Gold border when checked */
+        }
+
+        /* No checkmark styling */
+        .custom-checkbox::after {
+            content: none; /* Remove checkmark */
+        }
+    </style>
+</head>
+<body>
+    <h1>SAT Study Timetable</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Task</th>
+                <th>Done</th>
+            </tr>
+        </thead>
+        <tbody id="timetable">
+            <!-- Week 1 -->
+            <tr>
+                <td>October 1</td>
+                <td>Math (Algebra focus)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="1">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 1</td>
+                <td>Reading (Passage practice)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="2">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 2</td>
+                <td>Writing (Grammar rules and practice)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="3">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 2</td>
+                <td>Math (Geometry focus)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="4">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 3</td>
+                <td>Reading (Vocabulary and passage strategies)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="5">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 3</td>
+                <td>Writing (Essay structure and practice)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="6">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 4</td>
+                <td>Math (Data analysis and problem-solving)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="7">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 4</td>
+                <td>Review math concepts learned this week.</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="8">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 5</td>
+                <td>Full-length practice test (Math & Reading)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="9">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 5</td>
+                <td>Review practice test results.</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="10">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 6</td>
+                <td>Writing (Focused practice on essay prompts)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="11">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 6</td>
+                <td>Math (Review errors from practice test)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="12">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 7</td>
+                <td>Reading (Timed passage practice)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="13">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 7</td>
+                <td>Full-length practice test (Writing & Math)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="14">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <!-- Week 2 -->
+            <tr>
+                <td>October 8</td>
+                <td>Math (Focus on weak areas from practice tests)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="15">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 8</td>
+                <td>Reading (Literary and historical passages)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="16">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 9</td>
+                <td>Writing (Editing and revising exercises)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="17">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 9</td>
+                <td>Math (Advanced problem-solving)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="18">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 10</td>
+                <td>Reading (Science and social studies passages)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="19">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 10</td>
+                <td>Review vocabulary lists.</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="20">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 11</td>
+                <td>Full-length practice test (All sections)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="21">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 11</td>
+                <td>Review test results.</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="22">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 12</td>
+                <td>Math (Statistics and probability)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="23">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 12</td>
+                <td>Writing (Focused practice on types of questions)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="24">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 13</td>
+                <td>Reading (Timed drills with comprehension questions)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="25">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 13</td>
+                <td>Review writing and reading strategies.</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="26">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 14</td>
+                <td>Math (Comprehensive review of all topics)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="27">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 14</td>
+                <td>Full-length practice test (Focus on timing)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="28">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <!-- Week 3 -->
+            <tr>
+                <td>October 15</td>
+                <td>Math (Last-minute review of key concepts)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="29">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 15</td>
+                <td>Reading (Quick review of strategies)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="30">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 16</td>
+                <td>Writing (Practice essays with prompts)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="31">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 16</td>
+                <td>Review essay feedback.</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="32">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 17</td>
+                <td>Full-length practice test (All sections)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="33">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 17</td>
+                <td>Analyze results and target weak areas.</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="34">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 18</td>
+                <td>Light review of all sections (Focus on key concepts)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="35">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>October 18</td>
+                <td>Relax and plan for test day.</td>
+                <td>
+                    <label>
+                        <input type="checkbox" data-id="36">
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
